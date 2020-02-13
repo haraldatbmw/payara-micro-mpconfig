@@ -1,0 +1,75 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.bmw.reproducer</groupId>
+	<artifactId>payara-micro-mpconfig</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<javaee.version>8.0</javaee.version>
+		<microprofile.version>3.2</microprofile.version>
+		<payaramicro.maven.plugin.version>1.0.5</payaramicro.maven.plugin.version>
+		<payara.version>5.194</payara.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<!-- JavaEE and Microprofile -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${javaee.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.microprofile</groupId>
+			<artifactId>microprofile</artifactId>
+			<version>${microprofile.version}</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.10</version>
+		  </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>fish.payara.maven.plugins</groupId>
+				<artifactId>payara-micro-maven-plugin</artifactId>
+				<version>${payaramicro.maven.plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<payaraVersion>${payara.version}</payaraVersion>
+					<deployWar>true</deployWar>
+					<contextRoot>/</contextRoot>
+					<javaCommandLineOptions>
+						<option>
+							<value>-Duser.language=en</value>
+						</option>
+					</javaCommandLineOptions>
+					<commandLineOptions>
+						<option>
+						  <key>--nocluster</key>
+						</option>
+					</commandLineOptions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
