@@ -14,15 +14,15 @@ import javax.annotation.sql.DataSourceDefinition;
 // )
 
 // fully microprofile config does not work
-@DataSourceDefinition(
-    name            = "java:global/jdbc/reproducer",
-    className       = "${MPCONFIG=dataSource.className}", 
-    serverName      = "${MPCONFIG=dataSource.serverName}",
-    portNumber      = 5432,
-    databaseName    = "${MPCONFIG=dataSource.databaseName}",
-    user            = "${MPCONFIG=dataSource.user}",
-    password        = "${MPCONFIG=dataSource.password}"
-)
+// @DataSourceDefinition(
+//     name            = "java:global/jdbc/reproducer",
+//     className       = "${MPCONFIG=dataSource.className}", 
+//     serverName      = "${MPCONFIG=dataSource.serverName}",
+//     portNumber      = 5432,
+//     databaseName    = "${MPCONFIG=dataSource.databaseName}",
+//     user            = "${MPCONFIG=dataSource.user}",
+//     password        = "${MPCONFIG=dataSource.password}"
+// )
 
 // partial microprofile config does not work
 // @DataSourceDefinition(
