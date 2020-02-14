@@ -6,9 +6,8 @@ import javax.annotation.sql.DataSourceDefinition;
 // @DataSourceDefinition(
 //     name            = "java:global/jdbc/reproducer",
 //     className       = "org.postgresql.ds.PGSimpleDataSource", 
-//     serverName      = "localhost",
-//     portNumber      = 5432,
-//     databaseName    = "postgres",
+//     serverName      = "",
+//     url             = "jdbc:postgresql://localhost:5432/postgres",
 //     user            = "postgres",
 //     password        = "mysecretpassword"
 // )
@@ -17,9 +16,8 @@ import javax.annotation.sql.DataSourceDefinition;
 // @DataSourceDefinition(
 //     name            = "java:global/jdbc/reproducer",
 //     className       = "${MPCONFIG=dataSource.className}", 
-//     serverName      = "${MPCONFIG=dataSource.serverName}",
-//     portNumber      = 5432,
-//     databaseName    = "${MPCONFIG=dataSource.databaseName}",
+//     serverName      = "",
+//     url             = "${MPCONFIG=dataSource.url}",
 //     user            = "${MPCONFIG=dataSource.user}",
 //     password        = "${MPCONFIG=dataSource.password}"
 // )
@@ -28,9 +26,8 @@ import javax.annotation.sql.DataSourceDefinition;
 // @DataSourceDefinition(
 //     name            = "java:global/jdbc/reproducer",
 //     className       = "org.postgresql.ds.PGSimpleDataSource", 
-//     serverName      = "${MPCONFIG=dataSource.serverName}",
-//     portNumber      = 5432,
-//     databaseName    = "${MPCONFIG=dataSource.databaseName}",
+//     serverName      = "",
+//     url             = "${MPCONFIG=dataSource.url}",
 //     user            = "${MPCONFIG=dataSource.user}",
 //     password        = "${MPCONFIG=dataSource.password}"
 // )

@@ -8,9 +8,9 @@
         <name>java:global/jdbc/reproducer</name>
         <class-name>${MPCONFIG=dataSource.className}</class-name>
         <server-name>${MPCONFIG=dataSource.serverName}</server-name>
-        <port-number>5432</port-number>
-        <database-name>${MPCONFIG=dataSource.databaseName}</database-name>
+        <url>jdbc:postgresql://${MPCONFIG=dataSource.serverName}:${MPCONFIG=dataSource.port}/${MPCONFIG=dataSource.databaseName}</url>
         <user>${MPCONFIG=dataSource.user}</user>
         <password>${MPCONFIG=dataSource.password}</password>
     </data-source>
+
 </web-app>
